@@ -16,10 +16,10 @@ module.exports = {
         filename: 'bundle.js?[hash:8]',
         publicPath: 'build/'
     },
-    devtool: 'source-map',
     externals: {
         'egret': 'egret',
-        'RES': 'RES'
+        'RES': 'RES',
+        'eui': 'eui'
     },
     module: {
         loaders: loaders
@@ -28,12 +28,6 @@ module.exports = {
         new webpack.NoErrorsPlugin(),
         new webpack.DefinePlugin({
             BUILD_MODE: JSON.stringify('production')
-        }),
-        new HtmlWebpackPlugin({
-            title: 'egret',
-            template: path.resolve(paths.template, 'index.html'),
-            filename: 'index.html',
-            inject: true
         }),
         new webpack.optimize.UglifyJsPlugin({
             minimize: true,

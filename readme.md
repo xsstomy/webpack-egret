@@ -1,4 +1,6 @@
 
+### 此项目支持ES2015/TypeScript 开发
+
 #### clone
 
 ```
