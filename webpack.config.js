@@ -1,6 +1,5 @@
 var webpack = require('webpack');
 var path = require('path')
-var HtmlWebpackPlugin = require('html-webpack-plugin');
 var paths = require('./webpack.paths')
 var loaders = require('./webpack.loaders')
 

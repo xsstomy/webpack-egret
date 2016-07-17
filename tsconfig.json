@@ -5,8 +5,6 @@
       "sourceMap": true
    },
    "exclude": [
-      "bin-debug",
-      "bin-release",
       "resource",
       "node_modules",
       "bower_components"

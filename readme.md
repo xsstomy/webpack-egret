@@ -40,5 +40,7 @@ npm run build
 |---- resource
 ```
 
+> 这个src/Configure.ts 是为了配置本地开发环境和生产环境不同的地方
+> 比如本地开发环境请求服务器地址http://12.0.0.1:5000/api    生产环境:http://api.xxxx.com/api
 
 [相关教程](http://www.xsstomy.com/articles/17.html)

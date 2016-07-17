@@ -29,6 +29,12 @@ module.exports = {
         new webpack.DefinePlugin({
             BUILD_MODE: JSON.stringify('production')
         }),
+        new HtmlWebpackPlugin({
+            title: 'egret',
+            template: path.resolve(paths.template, 'index.html'),
+            filename: 'index.html',
+            inject: true
+        }),
         new webpack.optimize.UglifyJsPlugin({
             minimize: true,
             compress: {
