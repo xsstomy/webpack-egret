@@ -1,9 +1,13 @@
 
-## clone
+#### clone
 
-## cnpm install or npm install 
+```
+https://github.com/xsstomy/webpack-egret
+```
 
-## npm run start 
+#### cnpm install or npm install 
 
-## npm run build 
+#### npm run start 
+
+#### npm run build 
 
