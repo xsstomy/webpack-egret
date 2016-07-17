@@ -1,5 +1,6 @@
 
-### 此项目支持ES2015/TypeScript 开发
+### 此项目支持ES2015/TypeScript 开发, 当前egret版本 3.1.3
+
 
 #### clone
 
