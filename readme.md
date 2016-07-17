@@ -5,9 +5,35 @@
 https://github.com/xsstomy/webpack-egret
 ```
 
-#### cnpm install or npm install 
+####  安装
 
-#### npm run start 
+```
+cnpm install or npm install 
+```
 
-#### npm run build 
+#### 启动
 
+```
+npm run start 
+```
+
+#### 发布
+
+```
+npm run build 
+```
+
+#### 目录结构
+
+```
+|---- index.html
+|
+|---- build
+|
+|---- libs
+|
+|---- resource
+```
+
+
+[相关教程](http://www.xsstomy.com/articles/17.html)
