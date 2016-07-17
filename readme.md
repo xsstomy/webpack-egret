@@ -8,10 +8,12 @@
 https://github.com/xsstomy/webpack-egret
 ```
 
+在运行使用项目之前，请确保安装了[Node.js](http://nodejs.org) 
+
 ####  安装
 
 ```
-cnpm install or npm install 
+npm install 
 ```
 
 #### 启动
