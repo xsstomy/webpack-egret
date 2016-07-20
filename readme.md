@@ -1,6 +1,12 @@
 
-### 此项目支持ES2015/TypeScript 开发, 当前egret版本 3.1.3
+### 此项目支持ES2015/TypeScript 开发, 当前egret版本 3.1.3，纯web开发方式
 
+
+### roadmap
+- [ ] 资源压缩
+- [ ] 资源版本控制
+
+### 如果有需求，欢迎提[issues](https://github.com/xsstomy/webpack-egret/issues)
 
 #### clone
 
@@ -39,10 +45,6 @@ npm run build
 |
 |---- resource
 ```
-
-### roadmap
-- [ ] 资源压缩
-- [ ] 资源版本控制
 
 
 > 这个src/Configure.ts 是为了配置本地开发环境和生产环境不同的地方
