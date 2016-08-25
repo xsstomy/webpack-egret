@@ -5,9 +5,10 @@
   "main": "main.js",
   "scripts": {
     "start": "webpack-dev-server --hot --inline",
-    "build": " webpack --progress --color --config webpack.production.config.js"
+    "build": "rm -rf build && webpack --progress --color --config webpack.production.config.js && node nodejs.config.js"
   },
   "devDependencies": {
+    "awesome-typescript-loader": "^0.15.10",
     "babel-core": "^6.10.4",
     "babel-loader": "^6.2.4",
     "babel-plugin-transform-es2015-arrow-functions": "^6.8.0",
@@ -16,17 +17,20 @@
     "babel-preset-react": "^6.11.1",
     "babel-preset-stage-0": "^6.5.0",
     "babel-runtime": "^6.9.2",
-    "awesome-typescript-loader": "^0.15.10",
+    "html-webpack-plugin": "^2.22.0",
     "http-server": "^0.9.0",
+    "imagemin": "^5.2.2",
+    "imagemin-mozjpeg": "^6.0.0",
+    "imagemin-pngquant": "^5.0.0",
     "strip-sourcemap-loader": "0.0.1",
     "typescript": "^1.8.7",
     "webpack": "^1.12.14",
     "webpack-dev-server": "^1.14.1",
     "webpack-merge": "^0.14.0",
-    "webpack-validator": "^2.2.2",
-    "html-webpack-plugin": "^2.22.0"
+    "webpack-validator": "^2.2.2"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {}
 }
