@@ -1,5 +1,5 @@
 
-### 此项目支持ES2015/TypeScript 开发, 当前egret版本 3.1.3，纯web开发方式
+### 此项目支持ES2015/TypeScript 开发, 当前egret版本 4.0.0，纯web开发方式
 
 
 ### roadmap
