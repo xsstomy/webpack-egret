@@ -43,25 +43,25 @@ class Main extends eui.UILayer {
      */
     private loadingView: LoadingUI;
     protected createChildren(): void {
-            super.createChildren();
-            //inject the custom material parser
-            //注入自定义的素材解析器
-            var assetAdapter = new AssetAdapter();
-            this.stage.registerImplementation("eui.IAssetAdapter", assetAdapter);
-            this.stage.registerImplementation("eui.IThemeAdapter", new ThemeAdapter());
-            //Config loading process interface
-            //设置加载进度界面
-            this.loadingView = new LoadingUI();
-            this.stage.addChild(this.loadingView);
-            // initialize the Resource loading library
-            //初始化Resource资源加载库
-            RES.addEventListener(RES.ResourceEvent.CONFIG_COMPLETE, this.onConfigComplete, this);
-            RES.loadConfig("resource/default.res.json", "resource/");
-        }
-        /**
-         * 配置文件加载完成,开始预加载皮肤主题资源和preload资源组。
-         * Loading of configuration file is complete, start to pre-load the theme configuration file and the preload resource group
-         */
+        super.createChildren();
+        //inject the custom material parser
+        //注入自定义的素材解析器
+        var assetAdapter = new AssetAdapter();
+        this.stage.registerImplementation("eui.IAssetAdapter", assetAdapter);
+        this.stage.registerImplementation("eui.IThemeAdapter", new ThemeAdapter());
+        //Config loading process interface
+        //设置加载进度界面
+        this.loadingView = new LoadingUI();
+        this.stage.addChild(this.loadingView);
+        // initialize the Resource loading library
+        //初始化Resource资源加载库
+        RES.addEventListener(RES.ResourceEvent.CONFIG_COMPLETE, this.onConfigComplete, this);
+        RES.loadConfig("resource/default.res.json", "resource/");
+    }
+    /**
+     * 配置文件加载完成,开始预加载皮肤主题资源和preload资源组。
+     * Loading of configuration file is complete, start to pre-load the theme configuration file and the preload resource group
+     */
     private onConfigComplete(event: RES.ResourceEvent): void {
         RES.removeEventListener(RES.ResourceEvent.CONFIG_COMPLETE, this.onConfigComplete, this);
         // load skin theme configuration file, you can manually modify the file. And replace the default skin.
@@ -101,41 +101,41 @@ class Main extends eui.UILayer {
         }
     }
     private createScene() {
-            if (this.isThemeLoadEnd && this.isResourceLoadEnd) {
-                this.startCreateScene();
-            }
+        if (this.isThemeLoadEnd && this.isResourceLoadEnd) {
+            this.startCreateScene();
         }
-        /**
-         * 资源组加载出错
-         *  The resource group loading failed
-         */
+    }
+    /**
+     * 资源组加载出错
+     *  The resource group loading failed
+     */
     private onItemLoadError(event: RES.ResourceEvent): void {
-            console.warn("Url:" + event.resItem.url + " has failed to load");
-        }
-        /**
-         * 资源组加载出错
-         * Resource group loading failed
-         */
+        console.warn("Url:" + event.resItem.url + " has failed to load");
+    }
+    /**
+     * 资源组加载出错
+     * Resource group loading failed
+     */
     private onResourceLoadError(event: RES.ResourceEvent): void {
-            //TODO
-            console.warn("Group:" + event.groupName + " has failed to load");
-            //忽略加载失败的项目
-            //ignore loading failed projects
-            this.onResourceLoadComplete(event);
-        }
-        /**
-         * preload资源组加载进度
-         * loading process of preload resource
-         */
+        //TODO
+        console.warn("Group:" + event.groupName + " has failed to load");
+        //忽略加载失败的项目
+        //ignore loading failed projects
+        this.onResourceLoadComplete(event);
+    }
+    /**
+     * preload资源组加载进度
+     * loading process of preload resource
+     */
     private onResourceProgress(event: RES.ResourceEvent): void {
-            if (event.groupName == "preload") {
-                this.loadingView.setProgress(event.itemsLoaded, event.itemsTotal);
-            }
+        if (event.groupName == "preload") {
+            this.loadingView.setProgress(event.itemsLoaded, event.itemsTotal);
         }
-        /**
-         * 创建场景界面
-         * Create scene interface
-         */
+    }
+    /**
+     * 创建场景界面
+     * Create scene interface
+     */
     protected startCreateScene(): void {
         var button = new eui.Button();
         button.label = "Click!";
@@ -143,7 +143,7 @@ class Main extends eui.UILayer {
         button.verticalCenter = 0;
         this.addChild(button);
         button.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onButtonClick, this);
-        
+
     }
 
     private onButtonClick(e: egret.TouchEvent) {
@@ -155,6 +155,11 @@ class Main extends eui.UILayer {
     }
 
 
+    public delay(milliseconds: number) {
+        return new Promise<void>(resolve => {
+            setTimeout(resolve, milliseconds);
+        });
+    }
 }
 
 egret.registerClass(Main, "Main");
