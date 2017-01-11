@@ -32,6 +32,7 @@
 /// <reference path="../libs/modules/res/res.d.ts"/>
 /// <reference path="../libs/modules/game/game.d.ts"/>
 /// <reference path="../libs/modules/eui/eui.d.ts"/>
+
 import LoadingUI from './LoadingUI';
 import ThemeAdapter from './ThemeAdapter';
 import AssetAdapter from './AssetAdapter';
@@ -142,6 +143,7 @@ class Main extends eui.UILayer {
         button.verticalCenter = 0;
         this.addChild(button);
         button.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onButtonClick, this);
+        
     }
 
     private onButtonClick(e: egret.TouchEvent) {
@@ -151,6 +153,8 @@ class Main extends eui.UILayer {
         panel.verticalCenter = 0;
         this.addChild(panel);
     }
+
+
 }
 
 egret.registerClass(Main, "Main");
